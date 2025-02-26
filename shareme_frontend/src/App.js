@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Login from './components/Login';
@@ -10,16 +10,16 @@ const App = () => {
 
     useEffect(() => {
         const user = fetchUser();
-        if(!user) navigate('/login');
-    })
-    
-return(
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
-        <Routes>
-            <Route path='login' element={<Login />}/>
-            <Route path='/*' element={<Home />}/>
-        </Routes>
-    </GoogleOAuthProvider>
+        if (!user) navigate('/login');
+    }, [])
+
+    return (
+        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
+            <Routes>
+                <Route path='login' element={<Login />} />
+                <Route path='/*' element={<Home />} />
+            </Routes>
+        </GoogleOAuthProvider>
     )
 }
 

@@ -34,6 +34,7 @@ const CreatePin = ({ user }) => {
           console.log('Image upload error', error);
         })
     } else {
+      setLoading(false);
       setWrongImageType(true);
     }
   }
@@ -141,7 +142,7 @@ const CreatePin = ({ user }) => {
               <select onChange={(e) => setCategory(e.target.value)} className='outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer'>
                 <option value='other' className='bg-white'>Select Category</option>
                 {categories.map((category) => (
-                  <option className='text-base border-0 outline-none capitalize bg-white text-black' value={category.name}>{category.name}</option>
+                  <option className='text-base border-0 outline-none capitalize bg-white text-black' key={category.name} value={category.name}>{category.name}</option>
                 ))}
               </select>
             </div>
