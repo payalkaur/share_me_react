@@ -6,6 +6,6 @@ ShareMe is a modern and responsive photo-sharing application built with ReactJS 
 - **Post Comments**: Engage with posts by leaving comments.   
 - **Save & Download**: Easily download and save the images for future reference.
 
-##Tech Stack
+## Tech Stack
 - **ReactJS**
 - **Tailwind CSS**
